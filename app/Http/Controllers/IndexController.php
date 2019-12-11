@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\models\CategoriasModel;
 
 class IndexController extends Controller
 {
+    public function getCategorias()
+    {
+        $movies = CategoriasModel::getAllToAPI();
+        echo json_encode($movies);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +40,12 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Instanciamos la clase 
+        $categoria = new CategoriasModel;
+        //Declaramos el nombre con el nombre enviado en el request
+        $categoria->nombre = $request->nombre;
+        //Guardamos el cambio en nuestro modelo
+        $categoria->save();
     }
 
     /**
@@ -43,9 +54,12 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return "hola";
+        //Solicitamos al modelo la categoria con el id solicitado por GET.
+        /*$categoria = CategoriasModel::all();
+        return $categoria;*/
     }
 
     /**
