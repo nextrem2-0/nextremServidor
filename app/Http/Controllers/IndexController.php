@@ -40,12 +40,16 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
+
+        //echo($request);
         //Instanciamos la clase 
         $categoria = new CategoriasModel;
         //Declaramos el nombre con el nombre enviado en el request
         $categoria->nombre = $request->nombre;
         //Guardamos el cambio en nuestro modelo
         $categoria->save();
+
+       
     }
 
     /**
@@ -56,10 +60,9 @@ class IndexController extends Controller
      */
     public function show()
     {
-        return "hola";
         //Solicitamos al modelo la categoria con el id solicitado por GET.
-        /*$categoria = CategoriasModel::all();
-        return $categoria;*/
+        $categoria = CategoriasModel::all();
+        return $categoria;
     }
 
     /**

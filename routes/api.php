@@ -19,3 +19,5 @@ use Illuminate\Http\Request;
 
 //Route::resource('categoria', 'IndexController');
 Route::get('categoria', 'IndexController@show');
+
+Route::get('add', 'IndexController@store');
