@@ -4,13 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\CategoriasModel;
+use App\models\ImagesModel;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
 
 class IndexController extends Controller
 {
-    public function getCategorias()
+    public function getImages()
     {
-        $movies = CategoriasModel::getAllToAPI();
-        echo json_encode($movies);
+        /* $url = Storage::url('carrusel2.jpg');
+        return "<img src='".$url."'/>"; */
+        
+        
+        /* $imagesFiles = Storage::files('public');
+        $exists = Storage::disk('public')->exists('banner.jpg');
+        return $exists.''; */
+
+        $imagesDB = ImagesModel::all();
+        //return $imagesDB; 
+
+        $imagenes = array();
+        foreach ($imagesDB as $value) {
+            if (Storage::disk('public')->exists($value['nombre'])) {
+                array_push($imagenes,"<img src='".Storage::url($value['nombre'])."'/>");
+            }
+        }
+        return $imagenes[1]; 
+
     }
     /**
      * Display a listing of the resource.

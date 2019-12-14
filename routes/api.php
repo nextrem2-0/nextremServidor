@@ -21,3 +21,6 @@ use Illuminate\Http\Request;
 Route::get('categoria', 'IndexController@show');
 
 Route::get('add', 'IndexController@store');
+
+Route::get('getImages', 'IndexController@getImages');
+//Route::get('image/{filename}',PhotoController @image);

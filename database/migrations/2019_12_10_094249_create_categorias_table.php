@@ -22,6 +22,10 @@ class CreateCategoriasTable extends Migration
             $table->increments('id');
             $table->string('nombre');
         });
+        Schema::create('images', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nombre');
+        });
         
     }
 
@@ -34,5 +38,6 @@ class CreateCategoriasTable extends Migration
     {
         Schema::dropIfExists('categorias');
         Schema::dropIfExists('deportes');
+        Schema::dropIfExists('images');
     }
 }
