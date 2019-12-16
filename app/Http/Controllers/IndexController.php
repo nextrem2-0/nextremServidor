@@ -29,7 +29,8 @@ class IndexController extends Controller
                 array_push($imagenes,"<img src='".Storage::url($value['nombre'])."'/>");
             }
         }
-        return $imagenes[2];
+        return $imagenes[1]; 
+
     }
     /**
      * Display a listing of the resource.
