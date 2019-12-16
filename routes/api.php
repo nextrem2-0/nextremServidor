@@ -24,3 +24,4 @@ Route::get('add', 'IndexController@store');
 
 Route::get('getImages', 'IndexController@getImages');
 //Route::get('image/{filename}',PhotoController @image);
+Route::get('textInicio', 'IndexController@textInicio');

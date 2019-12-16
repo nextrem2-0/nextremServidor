@@ -14,8 +14,8 @@ class IndexController extends Controller
     {
         /* $url = Storage::url('carrusel2.jpg');
         return "<img src='".$url."'/>"; */
-        
-        
+
+
         /* $imagesFiles = Storage::files('public');
         $exists = Storage::disk('public')->exists('banner.jpg');
         return $exists.''; */
@@ -26,12 +26,16 @@ class IndexController extends Controller
         $imagenes = array();
         foreach ($imagesDB as $value) {
             if (Storage::disk('public')->exists($value['nombre'])) {
-                array_push($imagenes,"/public".Storage::url($value['nombre']));
+                array_push($imagenes, "/public" . Storage::url($value['nombre']));
             }
         }
-        return $imagenes; 
-
+        return $imagenes;
     }
+    public function textInicio()
+    {
+        return config('variables');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -68,8 +72,6 @@ class IndexController extends Controller
         $categoria->nombre = $request->nombre;
         //Guardamos el cambio en nuestro modelo
         $categoria->save();
-
-       
     }
 
     /**
