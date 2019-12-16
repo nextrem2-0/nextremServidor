@@ -26,10 +26,10 @@ class IndexController extends Controller
         $imagenes = array();
         foreach ($imagesDB as $value) {
             if (Storage::disk('public')->exists($value['nombre'])) {
-                array_push($imagenes,"<img src='".Storage::url($value['nombre'])."'/>");
+                array_push($imagenes,"/public".Storage::url($value['nombre']));
             }
         }
-        return $imagenes[1]; 
+        return $imagenes; 
 
     }
     /**
