@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\CategoriasModel;
+use App\models\DeportesModel;
 use App\models\ImagesModel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
@@ -34,6 +35,12 @@ class IndexController extends Controller
     public function textInicio()
     {
         return config('variables');
+    }
+
+    public function getDeportes()
+    {
+        $deportes = DeportesModel::all();
+        return $deportes;
     }
 
     /**

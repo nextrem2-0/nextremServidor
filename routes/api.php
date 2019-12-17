@@ -18,10 +18,13 @@ use Illuminate\Http\Request;
 });*/
 
 //Route::resource('categoria', 'IndexController');
+//Route::get('image/{filename}',PhotoController @image);
 Route::get('categoria', 'IndexController@show');
 
 Route::get('add', 'IndexController@store');
 
 Route::get('getImages', 'IndexController@getImages');
-//Route::get('image/{filename}',PhotoController @image);
+
 Route::get('textInicio', 'IndexController@textInicio');
+
+Route::get('getDeportes', 'IndexController@getDeportes');
