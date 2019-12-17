@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class CategoriasModel extends Model
 {
     /**
+     * Aquellos campos que podrán ser modificados.
+     *
+     * @var string
+     */
+    protected $fillable = ['nombre'];
+    
+    /**
      * The primary key associated with the table.
      *
      * @var string
