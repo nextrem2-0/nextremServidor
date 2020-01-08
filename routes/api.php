@@ -28,3 +28,7 @@ Route::get('getImages', 'IndexController@getImages');
 Route::get('textInicio', 'IndexController@textInicio');
 
 Route::get('getDeportes', 'IndexController@getDeportes');
+
+Route::post('register', 'UserController@register');
+
+Route::post('login', 'UserController@autenticar');

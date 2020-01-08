@@ -17,7 +17,7 @@ class DeportesSeeder extends Seeder
             ['nombre' => 'Rafting'],
             ['nombre' => 'Escalada'],
             ['nombre' => 'Surf'],
-            ['nombre' => 'Multiaventura']
+            ['nombre' => 'Esquí']
         ]);
     }
 }
