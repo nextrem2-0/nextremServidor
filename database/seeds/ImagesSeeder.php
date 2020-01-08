@@ -13,12 +13,12 @@ class ImagesSeeder extends Seeder
     {
         DB::table('images')->insert([
             ['nombre' => 'banner.jpg'],
-            ['nombre' => 'banner1.jpg'],
-            ['nombre' => 'banner2.jpg'],
-            ['nombre' => 'banner3.jpg'],
-            ['nombre' => 'banner4.jpg'],
-            ['nombre' => 'banner5.jpg'],
-            ['nombre' => 'banner6.jpg']
+            ['nombre' => 'slider1.jpg'],
+            ['nombre' => 'slider2.jpg'],
+            ['nombre' => 'slider3.jpg'],
+            ['nombre' => 'slider4.jpg'],
+            ['nombre' => 'slider5.jpg'],
+            ['nombre' => 'slider6.jpg']
         ]);
     }
 }
