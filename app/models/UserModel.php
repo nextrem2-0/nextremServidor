@@ -22,7 +22,7 @@ class UserModel extends Authenticatable implements JWTSubject
      *
      * @var array
      */
-    protected $hidden = ['password', 'api_token'];
+    protected $hidden = ['password'];
 
     /**
      * The table associated with the model.

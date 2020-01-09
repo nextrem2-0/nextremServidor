@@ -1,0 +1,47 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateEventosTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('eventos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nombre');
+            $table->string('resumen');
+            $table->integer('capacidad');
+            $table->decimal('precio', 6, 2);
+            $table->enum('dificultad', ['facil', 'medio', 'dificil']);
+            $table->boolean('isbusiness');
+            $table->boolean('material');
+            $table->integer('deporte_id')->unsigned();
+            $table->foreign('deporte_id')->references('id')->on('deportes');
+            $table->integer('creador_id')->unsigned();
+            $table->foreign('creador_id')->references('id')->on('users');
+
+            /* $table->dropForeign('answers_user_id_foreign');
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade'); */
+        });
+        Schema::enableForeignKeyConstraints();
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('eventos');
+    }
+}

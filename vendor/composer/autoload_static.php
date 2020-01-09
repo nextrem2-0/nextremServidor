@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4bd510895b583792e7ae7a58ca09821b
+class ComposerStaticInitbda8ce0dffefc4e4deb07c321c3b5cda
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -930,6 +930,7 @@ class ComposerStaticInit4bd510895b583792e7ae7a58ca09821b
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/Warning.php',
+        'EventosSeeder' => __DIR__ . '/../..' . '/database/seeds/EventosSeeder.php',
         'Facade\\FlareClient\\Api' => __DIR__ . '/..' . '/facade/flare-client-php/src/Api.php',
         'Facade\\FlareClient\\Concerns\\HasContext' => __DIR__ . '/..' . '/facade/flare-client-php/src/Concerns/HasContext.php',
         'Facade\\FlareClient\\Concerns\\UsesTime' => __DIR__ . '/..' . '/facade/flare-client-php/src/Concerns/UsesTime.php',
@@ -4798,6 +4799,7 @@ class ComposerStaticInit4bd510895b583792e7ae7a58ca09821b
         'Tymon\\JWTAuth\\Validators\\PayloadValidator' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Validators/PayloadValidator.php',
         'Tymon\\JWTAuth\\Validators\\TokenValidator' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Validators/TokenValidator.php',
         'Tymon\\JWTAuth\\Validators\\Validator' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Validators/Validator.php',
+        'UsersSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersSeeder.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',
@@ -4894,10 +4896,10 @@ class ComposerStaticInit4bd510895b583792e7ae7a58ca09821b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4bd510895b583792e7ae7a58ca09821b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4bd510895b583792e7ae7a58ca09821b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit4bd510895b583792e7ae7a58ca09821b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit4bd510895b583792e7ae7a58ca09821b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbda8ce0dffefc4e4deb07c321c3b5cda::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbda8ce0dffefc4e4deb07c321c3b5cda::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitbda8ce0dffefc4e4deb07c321c3b5cda::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitbda8ce0dffefc4e4deb07c321c3b5cda::$classMap;
 
         }, null, ClassLoader::class);
     }
