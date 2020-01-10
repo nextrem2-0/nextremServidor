@@ -19,15 +19,17 @@ use Illuminate\Http\Request;
 
 //Route::resource('categoria', 'IndexController');
 //Route::get('image/{filename}',PhotoController @image);
-Route::get('categoria', 'IndexController@show');
+Route::get('categorias', 'IndexController@getCategorias');
 
-Route::get('add', 'IndexController@store');
+Route::get('addCategoria', 'IndexController@store');
 
-Route::get('getImages', 'IndexController@getImages');
+Route::get('images', 'IndexController@getImages');
 
 Route::get('textInicio', 'IndexController@textInicio');
 
-Route::get('getDeportes', 'IndexController@getDeportes');
+Route::get('deportes', 'IndexController@getDeportes');
+
+Route::get('deportes/{deporte}/eventos', 'IndexController@getEventosOfSport');
 
 Route::post('register', 'UserController@register');
 

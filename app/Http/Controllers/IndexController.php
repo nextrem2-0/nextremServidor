@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\models\CategoriasModel;
 use App\models\DeportesModel;
 use App\models\ImagesModel;
+use App\models\EventosModel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
 
@@ -15,15 +16,10 @@ class IndexController extends Controller
     {
         /* $url = Storage::url('carrusel2.jpg');
         return "<img src='".$url."'/>"; */
-
-
         /* $imagesFiles = Storage::files('public');
         $exists = Storage::disk('public')->exists('banner.jpg');
         return $exists.''; */
-
         $imagesDB = ImagesModel::all();
-        //return $imagesDB; 
-
         $imagenes = array();
         foreach ($imagesDB as $value) {
             if (Storage::disk('public')->exists($value['nombre'])) {
@@ -41,6 +37,18 @@ class IndexController extends Controller
     {
         $deportes = DeportesModel::all();
         return $deportes;
+    }
+
+    public function getEventosOfSport($id)
+    {
+        $eventos = EventosModel::where('deporte_id', $id)->get();
+        return $eventos;
+    }
+
+    public function getCategorias()
+    {
+        $categoria = CategoriasModel::all();
+        return $categoria;
     }
 
     /**
@@ -89,9 +97,7 @@ class IndexController extends Controller
      */
     public function show()
     {
-        //Solicitamos al modelo la categoria con el id solicitado por GET.
-        $categoria = CategoriasModel::all();
-        return $categoria;
+        //
     }
 
     /**

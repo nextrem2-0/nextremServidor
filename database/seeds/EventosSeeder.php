@@ -17,8 +17,7 @@ class EventosSeeder extends Seeder
                 'resumen' => 'evento extremo',
                 'capacidad' => '4',
                 'precio' => '412.36',
-                'dificultad' => 'dificil',
-                'isbusiness' => '0',
+                'dificultad' => '3',
                 'material' => '1',
                 'deporte_id' => '1',
                 'creador_id' => '1'
