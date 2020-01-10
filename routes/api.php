@@ -25,7 +25,7 @@ Route::get('addCategoria', 'IndexController@store');
 
 Route::get('images', 'IndexController@getImages');
 
-Route::get('textInicio', 'IndexController@textInicio');
+Route::get('textInicio', 'IndexController@getTextInicio');
 
 Route::get('deportes', 'IndexController@getDeportes');
 

@@ -13,14 +13,64 @@ class EventosSeeder extends Seeder
     {
         DB::table('eventos')->insert([
             [
-                'nombre' => 'Evento1',
-                'resumen' => 'evento extremo',
+                'nombre' => 'Escalando los Alpes',
+                'resumen' => 'Sábado 25 y domingo 26 de enero',
                 'capacidad' => '4',
                 'precio' => '412.36',
                 'dificultad' => '3',
                 'material' => '1',
                 'deporte_id' => '1',
                 'creador_id' => '1'
+            ],
+            [
+                'nombre' => 'Buceo Deportivo',
+                'resumen' => 'Con escafandra autónom',
+                'capacidad' => '7',
+                'precio' => '316.76',
+                'dificultad' => '1',
+                'material' => '1',
+                'deporte_id' => '2',
+                'creador_id' => '4'
+            ],
+            [
+                'nombre' => 'Biathlon Esquí',
+                'resumen' => 'A esquiar!',
+                'capacidad' => '2',
+                'precio' => '20.99',
+                'dificultad' => '3',
+                'material' => '1',
+                'deporte_id' => '3',
+                'creador_id' => '2'
+            ],
+            [
+                'nombre' => 'Marmotas Rafting',
+                'resumen' => 'Un fin de semana con carreras',
+                'capacidad' => '6',
+                'precio' => '10.59',
+                'dificultad' => '2',
+                'material' => '0',
+                'deporte_id' => '4',
+                'creador_id' => '5'
+            ],
+            [
+                'nombre' => 'Longboard Contest',
+                'resumen' => 'Competición de Longboard',
+                'capacidad' => '10',
+                'precio' => '35.65',
+                'dificultad' => '2',
+                'material' => '1',
+                'deporte_id' => '5',
+                'creador_id' => '5'
+            ],
+            [
+                'nombre' => 'Esquí y snow',
+                'resumen' => 'material excelente',
+                'capacidad' => '8',
+                'precio' => '27.79',
+                'dificultad' => '2',
+                'material' => '1',
+                'deporte_id' => '3',
+                'creador_id' => '3'
             ]
         ]);
     }

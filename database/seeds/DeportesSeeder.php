@@ -13,11 +13,11 @@ class DeportesSeeder extends Seeder
     public function run()
     {
         DB::table('deportes')->insert([
-            ['nombre' => 'Buceo'],
-            ['nombre' => 'Rafting'],
             ['nombre' => 'Escalada'],
-            ['nombre' => 'Surf'],
-            ['nombre' => 'Esquí']
+            ['nombre' => 'Buceo'],
+            ['nombre' => 'Esquí'],
+            ['nombre' => 'Rafting'],
+            ['nombre' => 'Surf']
         ]);
     }
 }

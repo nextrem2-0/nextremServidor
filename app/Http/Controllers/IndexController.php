@@ -28,7 +28,7 @@ class IndexController extends Controller
         }
         return $imagenes;
     }
-    public function textInicio()
+    public function getTextInicio()
     {
         return config('variables');
     }
