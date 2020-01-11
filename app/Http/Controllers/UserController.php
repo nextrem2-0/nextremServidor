@@ -13,9 +13,13 @@ use App\models\UserModel;
 
 class UserController extends Controller
 {
-    public function autenticar(Request $request)
+    public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        //Logueate con email o con el username
+        $login = $request->input('login');
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $request->merge([$field => $login]);
+        $credentials = $request->only($field, 'password');
         try {
             if (!$token = JWTAuth::attempt($credentials)) {
                 return response()->json(['error' => 'invalid_credentials'], 400);
@@ -47,6 +51,7 @@ class UserController extends Controller
             'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'isbusiness' => 'required|boolean',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors()->toJson(), 400);
@@ -55,9 +60,17 @@ class UserController extends Controller
             'username' => $request->get('username'),
             'email' => $request->get('email'),
             'password' => Hash::make($request->get('password')),
+            'isbusiness' => $request->get('isbusiness'),
         ]);
         $token = JWTAuth::fromUser($user);
         return response()->json(compact('user', 'token'), 201);
+    }
+
+    public function logout(Request $request)
+    {
+        JWTAuth::invalidate($request);
+       /*  auth()->logout();
+        return response()->json(['message' => 'Successfully logged out']); */
     }
 
 
