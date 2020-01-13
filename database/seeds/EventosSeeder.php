@@ -14,7 +14,7 @@ class EventosSeeder extends Seeder
         DB::table('eventos')->insert([
             [
                 'nombre' => 'Escalando los Alpes',
-                'resumen' => 'Sábado 25 y domingo 26 de enero',
+                'resumen' => 'Sabado 25 y Domingo 26 de enero',
                 'capacidad' => '4',
                 'precio' => '412.36',
                 'dificultad' => '3',
@@ -24,7 +24,7 @@ class EventosSeeder extends Seeder
             ],
             [
                 'nombre' => 'Buceo Deportivo',
-                'resumen' => 'Con escafandra autónom',
+                'resumen' => 'Con escafandra autonoma',
                 'capacidad' => '7',
                 'precio' => '316.76',
                 'dificultad' => '1',
@@ -33,7 +33,7 @@ class EventosSeeder extends Seeder
                 'creador_id' => '4'
             ],
             [
-                'nombre' => 'Biathlon Esquí',
+                'nombre' => 'Biathlon Esqui',
                 'resumen' => 'A esquiar!',
                 'capacidad' => '2',
                 'precio' => '20.99',
@@ -54,7 +54,7 @@ class EventosSeeder extends Seeder
             ],
             [
                 'nombre' => 'Longboard Contest',
-                'resumen' => 'Competición de Longboard',
+                'resumen' => 'Competicion de Longboard',
                 'capacidad' => '10',
                 'precio' => '35.65',
                 'dificultad' => '2',
@@ -63,8 +63,8 @@ class EventosSeeder extends Seeder
                 'creador_id' => '5'
             ],
             [
-                'nombre' => 'Esquí y snow',
-                'resumen' => 'material excelente',
+                'nombre' => 'Esqui y Snow',
+                'resumen' => 'Material excelente',
                 'capacidad' => '8',
                 'precio' => '27.79',
                 'dificultad' => '2',
