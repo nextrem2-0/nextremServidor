@@ -39,6 +39,12 @@ class IndexController extends Controller
         return $deportes;
     }
 
+    public function getEventos()
+    {
+        $eventos = EventosModel::all();
+        return $eventos;
+    }
+
     public function getEventosOfSport($id)
     {
         $eventos = EventosModel::where('deporte_id', $id)->get();

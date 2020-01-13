@@ -29,6 +29,8 @@ Route::get('textInicio', 'IndexController@getTextInicio');
 
 Route::get('deportes', 'IndexController@getDeportes');
 
+Route::get('eventos', 'IndexController@getEventos');
+
 Route::get('deportes/{deporte}/eventos', 'IndexController@getEventosOfSport');
 
 Route::post('register', 'UserController@register');
@@ -37,6 +39,5 @@ Route::post('login', 'UserController@login');
 
 Route::group(['middleware' => ['jwt.verify']], function () {
     //Route::get('userLogged', 'UserController@getUsusarioAutenticado');
-
     Route::post('logout', 'UserController@logout');
 });
