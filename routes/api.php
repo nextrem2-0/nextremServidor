@@ -38,6 +38,6 @@ Route::get('register', 'UserController@register');
 Route::get('login', 'UserController@login');
 
 Route::group(['middleware' => ['jwt.verify']], function () {
-    //Route::get('userLogged', 'UserController@getUsusarioAutenticado');
+    Route::get('userLogged', 'UserController@getUsusarioAutenticado');
     Route::get('logout', 'UserController@logout');
 });
