@@ -30,7 +30,7 @@ class IndexController extends Controller
     }
     public function getTextInicio()
     {
-        return config('variables');
+        return config('variables.textInicio');
     }
 
     public function getDeportes()

@@ -16,8 +16,7 @@ class ImagesSeeder extends Seeder
             ['nombre' => 'slider1.jpg'],
             ['nombre' => 'slider2.jpg'],
             ['nombre' => 'slider3.jpg'],
-            ['nombre' => 'slider4.jpg'],
-            ['nombre' => 'slider5.jpg']
+            ['nombre' => 'slider4.jpg']
         ]);
     }
 }
