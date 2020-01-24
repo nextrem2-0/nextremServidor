@@ -4,24 +4,25 @@ namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EventosModel extends Model
+class CarritosModel extends Model
 {
     /**
      * Aquellos campos que podrán ser modificados.
      *
      * @var string
      */
-    protected $fillable = ['nombre','resumen','capacidad','precio','dificultad','material','deporte_id','creador_id'];
+    protected $fillable = ['usuario_id','precio'];
+
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table  = "eventos";
+    protected $table  = "carritos";
 
-    public function carritos()
+    public function eventos()
     {
-        return $this->belongsToMany('App\models\CarritosModel');
+        return $this->belongsToMany('App\models\EventosModel');
     }
 
     /**

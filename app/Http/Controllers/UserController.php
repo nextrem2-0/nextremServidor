@@ -52,6 +52,7 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'isbusiness' => 'required|boolean',
+            'avatar' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors()->toJson(), 400);
@@ -62,6 +63,14 @@ class UserController extends Controller
             'password' => Hash::make($request->get('password')),
             'isbusiness' => $request->get('isbusiness'),
         ]);
+
+        if (request()->avatar != null) {
+            $avatarName = $user->id . '_avatar' . time() . '.' . request()->avatar->getClientOriginalExtension();
+            $request->avatar->storeAs('avatars', $avatarName);
+            $user->avatar = $avatarName;
+            $user->save();
+        }
+
         $token = JWTAuth::fromUser($user);
         return response()->json(compact('user', 'token'), 201);
     }
@@ -72,7 +81,7 @@ class UserController extends Controller
         /*  auth()->logout();
         return response()->json(['message' => 'Successfully logged out']); */
     }
-    
+
     public function checkToken()
     {
         return JWTAuth::getToken();

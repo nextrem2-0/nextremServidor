@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsuariosTable extends Migration
+class CreateCarritosTable extends Migration
 {
     public $timestamps = false;
     /**
@@ -14,13 +14,11 @@ class CreateUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('carritos', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('isbusiness');
-            $table->string('username')->unique();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('avatar')->default('user.jpg');
+            $table->integer('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('id')->on('users');
+            $table->integer('precio');
         });
     }
 
@@ -31,6 +29,6 @@ class CreateUsuariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('carritos');
     }
 }
