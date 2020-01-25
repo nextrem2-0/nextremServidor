@@ -13,11 +13,26 @@ class DeportesSeeder extends Seeder
     public function run()
     {
         DB::table('deportes')->insert([
-            ['nombre' => 'Escalada'],
-            ['nombre' => 'Buceo'],
-            ['nombre' => 'Esqui'],
-            ['nombre' => 'Rafting'],
-            ['nombre' => 'Surf']
+            [
+                'nombre' => 'Escalada',
+                'icono' => 'icono-escalada.png'
+            ],
+            [
+                'nombre' => 'Buceo',
+                'icono' => 'icono-buceo.png'
+            ],
+            [
+                'nombre' => 'Esqui',
+                'icono' => 'icono-esqui.png'
+            ],
+            [
+                'nombre' => 'Rafting',
+                'icono' => 'icono-rafting.png'
+            ],
+            [
+                'nombre' => 'Surf',
+                'icono' => 'icono-surf.png'
+            ]
         ]);
     }
 }

@@ -21,6 +21,7 @@ class CreateCategoriasTable extends Migration
         Schema::create('deportes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
+            $table->string('icono');
         });
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');

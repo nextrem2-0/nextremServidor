@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'public'),
+    'default' => env('FILESYSTEM_DRIVER', 'customNextrem'),
 
     /*
     |--------------------------------------------------------------------------
@@ -62,6 +62,11 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
+        ],
+
+        'customNextrem' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
         ],
 
     ],
