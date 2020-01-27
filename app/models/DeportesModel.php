@@ -11,7 +11,7 @@ class DeportesModel extends Model
      *
      * @var string
      */
-    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre','icono'];
     
     /**
      * The primary key associated with the table.

@@ -21,7 +21,7 @@ class CarritosController extends Controller
                 'evento_id' => $evento['id_evento'],
                 'plazas' => $evento['plazas'],
             ]);
-            EventosModel::where('id', $evento['id_evento'])->decrement('capacidad', $evento['plazas']);
+            EventosModel::where('id', $evento['id_evento'])->increment('plazas_ocupadas', $evento['plazas']);
         }
     }
 }

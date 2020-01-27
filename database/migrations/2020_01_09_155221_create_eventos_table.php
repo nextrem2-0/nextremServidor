@@ -18,7 +18,8 @@ class CreateEventosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('resumen');
-            $table->integer('capacidad');
+            $table->integer('plazas_totales');
+            $table->integer('plazas_ocupadas');
             $table->decimal('precio', 6, 2);
             $table->enum('dificultad', ['1', '2', '3']);
             $table->boolean('material');

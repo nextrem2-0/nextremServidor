@@ -15,7 +15,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Escalando los Alpes',
                 'resumen' => 'Sabado 25 y Domingo 26 de enero',
-                'capacidad' => '4',
+                'plazas_totales' => '4',
+                'plazas_ocupadas' => '0',
                 'precio' => '412.36',
                 'dificultad' => '3',
                 'material' => '1',
@@ -25,7 +26,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Buceo Deportivo',
                 'resumen' => 'Con escafandra autonoma',
-                'capacidad' => '7',
+                'plazas_totales' => '7',
+                'plazas_ocupadas' => '0',
                 'precio' => '316.76',
                 'dificultad' => '1',
                 'material' => '1',
@@ -35,7 +37,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Biathlon Esqui',
                 'resumen' => 'A esquiar!',
-                'capacidad' => '2',
+                'plazas_totales' => '2',
+                'plazas_ocupadas' => '0',
                 'precio' => '20.99',
                 'dificultad' => '3',
                 'material' => '1',
@@ -45,7 +48,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Marmotas Rafting',
                 'resumen' => 'Un fin de semana con carreras',
-                'capacidad' => '6',
+                'plazas_totales' => '6',
+                'plazas_ocupadas' => '0',
                 'precio' => '10.59',
                 'dificultad' => '2',
                 'material' => '0',
@@ -55,7 +59,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Longboard Contest',
                 'resumen' => 'Competicion de Longboard',
-                'capacidad' => '10',
+                'plazas_totales' => '10',
+                'plazas_ocupadas' => '0',
                 'precio' => '35.65',
                 'dificultad' => '2',
                 'material' => '1',
@@ -65,7 +70,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Esqui y Snow',
                 'resumen' => 'Material excelente',
-                'capacidad' => '8',
+                'plazas_totales' => '8',
+                'plazas_ocupadas' => '0',
                 'precio' => '27.79',
                 'dificultad' => '2',
                 'material' => '1',
@@ -75,7 +81,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Clases de escalada',
                 'resumen' => 'Todos los findes de Marzo',
-                'capacidad' => '20',
+                'plazas_totales' => '20',
+                'plazas_ocupadas' => '0',
                 'precio' => '20.36',
                 'dificultad' => '1',
                 'material' => '1',
@@ -85,7 +92,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Escalada de extrema',
                 'resumen' => 'Convencion de escaladores',
-                'capacidad' => '100',
+                'plazas_totales' => '100',
+                'plazas_ocupadas' => '0',
                 'precio' => '500.36',
                 'dificultad' => '3',
                 'material' => '1',
@@ -95,7 +103,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Liga de escalada',
                 'resumen' => 'liga de escalada juvenil',
-                'capacidad' => '20',
+                'plazas_totales' => '20',
+                'plazas_ocupadas' => '0',
                 'precio' => '10.36',
                 'dificultad' => '2',
                 'material' => '1',
@@ -105,7 +114,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Campeonato de buceo',
                 'resumen' => 'XXII Campeonato nacional de buceo',
-                'capacidad' => '10',
+                'plazas_totales' => '10',
+                'plazas_ocupadas' => '0',
                 'precio' => '300.36',
                 'dificultad' => '3',
                 'material' => '1',
@@ -115,7 +125,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Buceo extremo',
                 'resumen' => 'Ven a bucear a las zonas mas extremas',
-                'capacidad' => '40',
+                'plazas_totales' => '40',
+                'plazas_ocupadas' => '0',
                 'precio' => '500.36',
                 'dificultad' => '3',
                 'material' => '0',
@@ -125,7 +136,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Practicas buceo',
                 'resumen' => 'Mejora tus habilidades de buceo',
-                'capacidad' => '30',
+                'plazas_totales' => '30',
+                'plazas_ocupadas' => '0',
                 'precio' => '200',
                 'dificultad' => '1',
                 'material' => '1',
@@ -135,7 +147,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Esquiando en los alpes',
                 'resumen' => 'Una experiencia unica',
-                'capacidad' => '5',
+                'plazas_totales' => '5',
+                'plazas_ocupadas' => '0',
                 'precio' => '900',
                 'dificultad' => '3',
                 'material' => '0',
@@ -145,7 +158,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Practicas de Esquí',
                 'resumen' => 'Mejora tus habilidades de buceo',
-                'capacidad' => '30',
+                'plazas_totales' => '30',
+                'plazas_ocupadas' => '0',
                 'precio' => '20',
                 'dificultad' => '1',
                 'material' => '1',
@@ -155,7 +169,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Quedada de esquiadores',
                 'resumen' => 'Reunete con los mejores esquiadores del país',
-                'capacidad' => '700',
+                'plazas_totales' => '700',
+                'plazas_ocupadas' => '0',
                 'precio' => '60',
                 'dificultad' => '2',
                 'material' => '0',
@@ -165,7 +180,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Campeonato Rafting',
                 'resumen' => 'XXII Campeonato nacional de rafting',
-                'capacidad' => '10',
+                'plazas_totales' => '10',
+                'plazas_ocupadas' => '0',
                 'precio' => '140',
                 'dificultad' => '3',
                 'material' => '0',
@@ -175,7 +191,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Entrenamiento Rafting',
                 'resumen' => 'Aprende rafting',
-                'capacidad' => '40',
+                'plazas_totales' => '40',
+                'plazas_ocupadas' => '0',
                 'precio' => '250',
                 'dificultad' => '1',
                 'material' => '1',
@@ -185,7 +202,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Rafting Amazonas',
                 'resumen' => 'Una experiencia inolvidable',
-                'capacidad' => '20',
+                'plazas_totales' => '20',
+                'plazas_ocupadas' => '0',
                 'precio' => '2500',
                 'dificultad' => '3',
                 'material' => '1',
@@ -195,7 +213,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Clases de surf',
                 'resumen' => 'Clases de surf nivel principiante',
-                'capacidad' => '20',
+                'plazas_totales' => '20',
+                'plazas_ocupadas' => '0',
                 'precio' => '15',
                 'dificultad' => '1',
                 'material' => '1',
@@ -205,7 +224,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Campeonato de surf',
                 'resumen' => 'XXII Campeonato nacional de rafting',
-                'capacidad' => '10',
+                'plazas_totales' => '10',
+                'plazas_ocupadas' => '0',
                 'precio' => '300',
                 'dificultad' => '3',
                 'material' => '0',
@@ -215,7 +235,8 @@ class EventosSeeder extends Seeder
             [
                 'nombre' => 'Surfeando Australia',
                 'resumen' => 'Una experiencia única',
-                'capacidad' => '5',
+                'plazas_totales' => '5',
+                'plazas_ocupadas' => '0',
                 'precio' => '1400',
                 'dificultad' => '3',
                 'material' => '1',

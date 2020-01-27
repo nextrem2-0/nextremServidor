@@ -11,7 +11,7 @@ class EventosModel extends Model
      *
      * @var string
      */
-    protected $fillable = ['nombre','resumen','capacidad','precio','dificultad','material','deporte_id','creador_id'];
+    protected $fillable = ['nombre','resumen','plazas_totales','plazas_ocupadas','precio','dificultad','material','deporte_id','creador_id'];
     /**
      * The table associated with the model.
      *
