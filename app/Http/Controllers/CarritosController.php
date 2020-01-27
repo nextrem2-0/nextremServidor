@@ -24,4 +24,14 @@ class CarritosController extends Controller
             EventosModel::where('id', $evento['id_evento'])->increment('plazas_ocupadas', $evento['plazas']);
         }
     }
+
+    public function getEventosOfUser($id)
+    {
+        return EventosModel::whereIn('id', function ($query) use ($id) {
+            $query->select('evento_id')
+                ->from(with(new Carrito_EventoModel)->getTable())
+                ->join('carritos', 'carrito_evento.carrito_id', '=', 'carritos.id')
+                ->where('carritos.usuario_id', $id);
+        })->get();
+    }
 }
