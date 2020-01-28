@@ -18,6 +18,7 @@ class CreateCarritosTable extends Migration
             $table->increments('id');
             $table->integer('usuario_id')->unsigned();
             $table->foreign('usuario_id')->references('id')->on('users');
+            $table->boolean('confirmado');
             $table->integer('precio');
         });
     }

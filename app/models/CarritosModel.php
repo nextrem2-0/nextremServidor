@@ -11,7 +11,7 @@ class CarritosModel extends Model
      *
      * @var string
      */
-    protected $fillable = ['usuario_id','precio'];
+    protected $fillable = ['usuario_id','confirmado','precio'];
 
     /**
      * The table associated with the model.
