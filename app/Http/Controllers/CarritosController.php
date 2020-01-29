@@ -11,11 +11,11 @@ class CarritosController extends Controller
 {
     public function store(Request $request)
     {
-        $idCarrito = CarritosModel::select('id', 'confirmado')->where('usuario_id', $request->get('idUsusario'))->orderBy('id', 'desc')->take(1)->get();
+        $idCarrito = CarritosModel::select('id', 'confirmado')->where('usuario_id', $request->get('idUsuario'))->orderBy('id', 'desc')->take(1)->get();
         if ($request->get('confirmado') == 0) {
             if (count($idCarrito) == 0 || $idCarrito[0]['confirmado'] == 1) {
                 $carrito = CarritosModel::create([
-                    'usuario_id' => $request->get('idUsusario'),
+                    'usuario_id' => $request->get('idUsuario'),
                     'precio' => $request->get('precio'),
                     'confirmado' => $request->get('confirmado'),
                 ]);
@@ -42,7 +42,10 @@ class CarritosController extends Controller
             $query->select('evento_id')
                 ->from(with(new Carrito_EventoModel)->getTable())
                 ->join('carritos', 'carrito_evento.carrito_id', '=', 'carritos.id')
-                ->where('carritos.usuario_id', $id);
+                ->where([
+                    ['carritos.usuario_id', '=', $id],
+                    ['carritos.confirmado', '=', 1],
+                ]);
         })->get();
     }
 }

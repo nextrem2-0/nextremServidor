@@ -45,4 +45,5 @@ Route::group(['middleware' => ['jwt.verify']], function () {
     Route::get('userLogged', 'UserController@getUsusarioAutenticado');
     Route::get('logout', 'UserController@logout');
     Route::get('checkToken', 'UserController@checkToken');
+    Route::get('editarPerfil', 'UserController@editarPerfil');
 });

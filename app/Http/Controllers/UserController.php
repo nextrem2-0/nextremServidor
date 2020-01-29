@@ -87,6 +87,36 @@ class UserController extends Controller
         return JWTAuth::getToken();
     }
 
+    public function editarPerfil(Request $request)
+    {
+        //var_dump( $request->all());
+        //id nombre email  password  newPassword  
+
+        $validator = Validator::make($request->all(), [
+            'nombre' => 'nullable|string|max:255',
+            'email' => 'nullable|string|email|max:255|unique:users',
+            'password' => 'nullable|string|min:6'
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $nombre =  $request->get('nombre');
+        if ($nombre != null ||  $nombre != "") {
+            UserModel::where('id', $request->get('id'))->update(array('username' => $nombre));
+        }
+
+        $email =  $request->get('email');
+        if ($email != null ||  $email != "") {
+            UserModel::where('id', $request->get('id'))->update(array('email' => $email));
+        }
+        //UserModel::where('id', $request->get('id'))->update(array('confirmado' => 1));
+        $hashedPassword = UserModel::where('id', $request->get('id'))->value('password');
+        if (Hash::check($request->get('password'), $hashedPassword)) {
+            $password = Hash::make($request->get('password'));
+            UserModel::where('id', $request->get('id'))->update(array('password' => $password));
+        }
+    }
 
 
 
