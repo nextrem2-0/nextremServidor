@@ -20,7 +20,7 @@ class CreateUsuariosTable extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('avatar')->default('user.jpg');
+            $table->string('avatar')->default('user.png');
         });
     }
 
