@@ -14,16 +14,12 @@ class IndexController extends Controller
 {
     public function getImages()
     {
-        /* $url = Storage::url('carrusel2.jpg');
-        return "<img src='".$url."'/>"; */
-        /* $imagesFiles = Storage::files('public');
-        $exists = Storage::disk('public')->exists('banner.jpg');
-        return $exists.''; */
         $imagesDB = ImagesModel::all();
         $imagenes = array();
         foreach ($imagesDB as $value) {
             if (Storage::disk('public')->exists($value['nombre'])) {
-                array_push($imagenes, "public" . Storage::url($value['nombre']));
+                /* array_push($imagenes, "public" . Storage::url($value['nombre'])); */
+                array_push($imagenes, $value['nombre']);
             }
         }
         return $imagenes;
