@@ -41,11 +41,12 @@ Route::get('login', 'UserController@login');
 
 Route::get('addCarrito', 'CarritosController@store');
 
-Route::get('cargarCarrito', 'CarritosController@getLastNotConfirmedCarrito');
+
 
 Route::group(['middleware' => ['jwt.verify']], function () {
     Route::get('userLogged', 'UserController@getUsusarioAutenticado');
     Route::get('logout', 'UserController@logout');
     Route::get('checkToken', 'UserController@checkToken');
     Route::get('editarPerfil', 'UserController@editarPerfil');
+    Route::get('cargarCarrito', 'CarritosController@getLastNotConfirmedCarrito');
 });
