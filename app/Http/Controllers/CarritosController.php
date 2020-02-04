@@ -36,6 +36,24 @@ class CarritosController extends Controller
         }
     }
 
+    public function getLastNotConfirmedCarrito(Request $request)
+    {
+        $carrito = CarritosModel::select('id', 'confirmado')->where('usuario_id', $request->get('user_id'))->orderBy('id', 'desc')->take(1)->get();
+
+        if (count($carrito) != 0 && $carrito[0]['confirmado'] == 0) {
+            $id = $carrito[0]['id'];
+            return EventosModel::whereIn('id', function ($query) use ($id) {
+                $query->select('evento_id')
+                    ->from(with(new Carrito_EventoModel)->getTable())
+                    ->join('carritos', 'carrito_evento.carrito_id', '=', 'carritos.id')
+                    ->where([
+                        ['carritos.usuario_id', '=', $id],
+                        ['carritos.confirmado', '=', 0],
+                    ]);
+            })->get();
+        }
+    }
+
     public function getEventosOfUser($id)
     {
         return EventosModel::whereIn('id', function ($query) use ($id) {
