@@ -20,6 +20,7 @@ class EventosSeeder extends Seeder
                 'precio' => '412.36',
                 'dificultad' => '3',
                 'material' => '1',
+                'imagen' => 'climb1.jpg',
                 'deporte_id' => '1',
                 'creador_id' => '1'
             ],
@@ -31,6 +32,7 @@ class EventosSeeder extends Seeder
                 'precio' => '316.76',
                 'dificultad' => '1',
                 'material' => '1',
+                'imagen' => 'buceo1.jpg',
                 'deporte_id' => '2',
                 'creador_id' => '4'
             ],
@@ -42,6 +44,7 @@ class EventosSeeder extends Seeder
                 'precio' => '20.99',
                 'dificultad' => '3',
                 'material' => '1',
+                'imagen' => 'snow1.jpg',
                 'deporte_id' => '3',
                 'creador_id' => '2'
             ],
@@ -53,6 +56,7 @@ class EventosSeeder extends Seeder
                 'precio' => '10.59',
                 'dificultad' => '2',
                 'material' => '0',
+                'imagen' => 'rafting1.jpg',
                 'deporte_id' => '4',
                 'creador_id' => '5'
             ],
@@ -64,6 +68,7 @@ class EventosSeeder extends Seeder
                 'precio' => '35.65',
                 'dificultad' => '2',
                 'material' => '1',
+                'imagen' => 'snow2.jpg',
                 'deporte_id' => '5',
                 'creador_id' => '5'
             ],
@@ -75,6 +80,7 @@ class EventosSeeder extends Seeder
                 'precio' => '27.79',
                 'dificultad' => '2',
                 'material' => '1',
+                'imagen' => 'snow3.jpg',
                 'deporte_id' => '3',
                 'creador_id' => '3'
             ],
@@ -86,6 +92,7 @@ class EventosSeeder extends Seeder
                 'precio' => '20.36',
                 'dificultad' => '1',
                 'material' => '1',
+                'imagen' => 'climb2.jpg',
                 'deporte_id' => '1',
                 'creador_id' => '1'
             ],
@@ -97,6 +104,7 @@ class EventosSeeder extends Seeder
                 'precio' => '500.36',
                 'dificultad' => '3',
                 'material' => '1',
+                'imagen' => 'climb3.jpg',
                 'deporte_id' => '1',
                 'creador_id' => '1'
             ],
@@ -108,6 +116,7 @@ class EventosSeeder extends Seeder
                 'precio' => '10.36',
                 'dificultad' => '2',
                 'material' => '1',
+                'imagen' => 'evento.png',
                 'deporte_id' => '1',
                 'creador_id' => '1'
             ],
@@ -119,6 +128,7 @@ class EventosSeeder extends Seeder
                 'precio' => '300.36',
                 'dificultad' => '3',
                 'material' => '1',
+                'imagen' => 'buceo2.jpg',
                 'deporte_id' => '2',
                 'creador_id' => '1'
             ],
@@ -130,6 +140,7 @@ class EventosSeeder extends Seeder
                 'precio' => '500.36',
                 'dificultad' => '3',
                 'material' => '0',
+                'imagen' => 'buceo3.jpg',
                 'deporte_id' => '2',
                 'creador_id' => '1'
             ],
@@ -141,6 +152,7 @@ class EventosSeeder extends Seeder
                 'precio' => '200',
                 'dificultad' => '1',
                 'material' => '1',
+                'imagen' => 'evento.png',
                 'deporte_id' => '2',
                 'creador_id' => '1'
             ],
@@ -152,6 +164,7 @@ class EventosSeeder extends Seeder
                 'precio' => '900',
                 'dificultad' => '3',
                 'material' => '0',
+                'imagen' => 'evento.png',
                 'deporte_id' => '3',
                 'creador_id' => '1'
             ],
@@ -163,6 +176,7 @@ class EventosSeeder extends Seeder
                 'precio' => '20',
                 'dificultad' => '1',
                 'material' => '1',
+                'imagen' => 'evento.png',
                 'deporte_id' => '3',
                 'creador_id' => '1'
             ],
@@ -174,6 +188,7 @@ class EventosSeeder extends Seeder
                 'precio' => '60',
                 'dificultad' => '2',
                 'material' => '0',
+                'imagen' => 'evento.png',
                 'deporte_id' => '3',
                 'creador_id' => '1'
             ],
@@ -185,6 +200,7 @@ class EventosSeeder extends Seeder
                 'precio' => '140',
                 'dificultad' => '3',
                 'material' => '0',
+                'imagen' => 'rafting1.jpg',
                 'deporte_id' => '4',
                 'creador_id' => '1'
             ],
@@ -196,6 +212,7 @@ class EventosSeeder extends Seeder
                 'precio' => '250',
                 'dificultad' => '1',
                 'material' => '1',
+                'imagen' => 'rafting2.jpg',
                 'deporte_id' => '4',
                 'creador_id' => '1'
             ],
@@ -207,6 +224,7 @@ class EventosSeeder extends Seeder
                 'precio' => '2500',
                 'dificultad' => '3',
                 'material' => '1',
+                'imagen' => 'rafting3.jpg',
                 'deporte_id' => '4',
                 'creador_id' => '1'
             ],
@@ -218,17 +236,19 @@ class EventosSeeder extends Seeder
                 'precio' => '15',
                 'dificultad' => '1',
                 'material' => '1',
+                'imagen' => 'surf1.jpg',
                 'deporte_id' => '5',
                 'creador_id' => '1'
             ],
             [
                 'nombre' => 'Campeonato de surf',
-                'resumen' => 'XXII Campeonato nacional de rafting',
+                'resumen' => 'XXII Campeonato nacional de surf',
                 'plazas_totales' => '10',
                 'plazas_ocupadas' => '0',
                 'precio' => '300',
                 'dificultad' => '3',
                 'material' => '0',
+                'imagen' => 'surf2.jpg',
                 'deporte_id' => '5',
                 'creador_id' => '1'
             ],
@@ -240,6 +260,7 @@ class EventosSeeder extends Seeder
                 'precio' => '1400',
                 'dificultad' => '3',
                 'material' => '1',
+                'imagen' => 'surf3.jpg',
                 'deporte_id' => '5',
                 'creador_id' => '1'
             ]

@@ -23,7 +23,7 @@ class CreateEventosTable extends Migration
             $table->decimal('precio', 6, 2);
             $table->enum('dificultad', ['1', '2', '3']);
             $table->boolean('material');
-            $table->string('imagen')->nullable();
+            $table->string('imagen')->default('evento.png');
             $table->integer('deporte_id')->unsigned();
             $table->foreign('deporte_id')->references('id')->on('deportes');
             $table->integer('creador_id')->unsigned();
