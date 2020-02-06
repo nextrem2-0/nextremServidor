@@ -43,6 +43,7 @@ Route::get('login', 'UserController@login');
 
 Route::get('addCarrito', 'CarritosController@store');
 
+Route::get('deleteEventoCarrito', 'CarritosController@destroy');
 
 
 Route::group(['middleware' => ['jwt.verify']], function () {

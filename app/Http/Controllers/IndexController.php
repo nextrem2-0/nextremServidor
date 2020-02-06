@@ -49,7 +49,7 @@ class IndexController extends Controller
 
     public function getEventosMasOcupados()
     {
-        $eventos = EventosModel::where('plazas_totales', '<>', 'plazas_ocupadas')->orderByRaw('plazas_totales - plazas_ocupadas ASC')->take(3)->get();
+        $eventos = EventosModel::whereRAW('plazas_totales - plazas_ocupadas !=0 ')->orderByRaw('plazas_totales - plazas_ocupadas ASC')->take(3)->get();
         return $eventos;
     }
 
