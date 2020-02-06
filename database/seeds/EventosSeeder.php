@@ -56,7 +56,7 @@ class EventosSeeder extends Seeder
                 'precio' => '10.59',
                 'dificultad' => '2',
                 'material' => '0',
-                'imagen' => 'rafting1.jpg',
+                'imagen' => 'evento.jpg',
                 'deporte_id' => '4',
                 'creador_id' => '5'
             ],
@@ -69,7 +69,7 @@ class EventosSeeder extends Seeder
                 'dificultad' => '2',
                 'material' => '1',
                 'imagen' => 'snow2.jpg',
-                'deporte_id' => '5',
+                'deporte_id' => '3',
                 'creador_id' => '5'
             ],
             [
@@ -116,7 +116,7 @@ class EventosSeeder extends Seeder
                 'precio' => '10.36',
                 'dificultad' => '2',
                 'material' => '1',
-                'imagen' => 'evento.png',
+                'imagen' => 'evento.jpg',
                 'deporte_id' => '1',
                 'creador_id' => '1'
             ],
@@ -152,7 +152,7 @@ class EventosSeeder extends Seeder
                 'precio' => '200',
                 'dificultad' => '1',
                 'material' => '1',
-                'imagen' => 'evento.png',
+                'imagen' => 'evento.jpg',
                 'deporte_id' => '2',
                 'creador_id' => '1'
             ],
@@ -164,7 +164,7 @@ class EventosSeeder extends Seeder
                 'precio' => '900',
                 'dificultad' => '3',
                 'material' => '0',
-                'imagen' => 'evento.png',
+                'imagen' => 'evento.jpg',
                 'deporte_id' => '3',
                 'creador_id' => '1'
             ],
@@ -176,7 +176,7 @@ class EventosSeeder extends Seeder
                 'precio' => '20',
                 'dificultad' => '1',
                 'material' => '1',
-                'imagen' => 'evento.png',
+                'imagen' => 'evento.jpg',
                 'deporte_id' => '3',
                 'creador_id' => '1'
             ],
@@ -188,7 +188,7 @@ class EventosSeeder extends Seeder
                 'precio' => '60',
                 'dificultad' => '2',
                 'material' => '0',
-                'imagen' => 'evento.png',
+                'imagen' => 'evento.jpg',
                 'deporte_id' => '3',
                 'creador_id' => '1'
             ],

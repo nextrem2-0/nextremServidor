@@ -33,6 +33,8 @@ Route::get('eventos', 'IndexController@getEventos');
 
 Route::get('deportes/{deporte}/eventos', 'IndexController@getEventosOfSport');
 
+Route::get('eventosRecomendados', 'IndexController@getEventosMasOcupados');
+
 Route::get('user/{user}/eventos', 'CarritosController@getEventosOfUser');
 
 Route::post('register', 'UserController@register');

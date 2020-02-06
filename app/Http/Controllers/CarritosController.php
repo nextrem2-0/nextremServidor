@@ -36,6 +36,20 @@ class CarritosController extends Controller
         }
     }
 
+    /**
+     * Borrar evento de carrito
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        $idCarrito = CarritosModel::select('id', 'confirmado')->where('usuario_id', $request->get('idUsuario'))->orderBy('id', 'desc')->take(1)->get();
+        if ($idCarrito[0]['confirmado'] == 0) {
+            Carrito_EventoModel::where([['carrito_id', '=', $idCarrito[0]['id']],['evento_id', '=', 'idEvento']])->delete();
+        }
+    }
+
     public function getLastNotConfirmedCarrito(Request $request)
     {
         $id = $request->get('user_id');
