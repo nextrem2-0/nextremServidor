@@ -47,6 +47,72 @@ class IndexController extends Controller
         return $eventos;
     }
 
+    public function storeEvento(Request $request)
+    {
+        $evento = new EventosModel;
+
+        $evento->nombre = $request->nombre;
+        $evento->resumen = $request->resumen;
+        $evento->plazas_totales = $request->plazas_totales;
+        $evento->plazas_ocupadas = $request->plazas_ocupadas;
+        $evento->precio = $request->precio;
+        $evento->dificultad = $request->dificultad;
+        $evento->material = $request->material;
+        $evento->imagen = $request->imagen;
+        $evento->deporte_id = $request->deporte_id;
+        $evento->creador_id = $request->creador_id;
+
+        $evento->save();
+    }
+    public function editarEvento(Request $request)
+    {
+        $id =  $request->get('id');
+        $nombre =  $request->get('nombre');
+        if ($nombre != null ||  $nombre != "") {
+            EventosModel::where('id', $id)->update(array('nombre' => $nombre));
+        }
+        $resumen =  $request->get('resumen');
+        if ($resumen != null ||  $resumen != "") {
+            EventosModel::where('id', $id)->update(array('resumen' => $resumen));
+        }
+        $plazas_totales =  $request->get('plazas_totales');
+        if ($plazas_totales != null ||  $plazas_totales != "") {
+            EventosModel::where('id', $id)->update(array('plazas_totales' => $plazas_totales));
+        }
+        $plazas_ocupadas =  $request->get('plazas_ocupadas');
+        if ($plazas_ocupadas != null ||  $plazas_ocupadas != "") {
+            EventosModel::where('id', $id)->update(array('plazas_ocupadas' => $plazas_ocupadas));
+        }
+        $precio =  $request->get('precio');
+        if ($precio != null ||  $precio != "") {
+            EventosModel::where('id', $id)->update(array('precio' => $precio));
+        }
+        $dificultad =  $request->get('dificultad');
+        if ($dificultad != null ||  $dificultad != "") {
+            EventosModel::where('id', $id)->update(array('dificultad' => $dificultad));
+        }
+        $material =  $request->get('material');
+        if ($material != null ||  $material != "") {
+            EventosModel::where('id', $id)->update(array('material' => $material));
+        }
+        $imagen =  $request->get('imagen');
+        if ($imagen != null ||  $imagen != "") {
+            EventosModel::where('id', $id)->update(array('imagen' => $imagen));
+        }
+        $deporte_id =  $request->get('deporte_id');
+        if ($deporte_id != null ||  $deporte_id != "") {
+            EventosModel::where('id', $id)->update(array('deporte_id' => $deporte_id));
+        }
+    }
+
+    public function destroyEvento($id)
+    {
+        if ($id != null) {
+            EventosModel::where('id', '=', $id)->delete();
+        }
+    }
+
+
     public function getEventosMasOcupados()
     {
         $eventos = EventosModel::whereRAW('plazas_totales - plazas_ocupadas !=0 ')->orderByRaw('plazas_totales - plazas_ocupadas ASC')->take(3)->get();

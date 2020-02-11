@@ -118,11 +118,20 @@ class UserController extends Controller
         }
     }
 
+    public function destroyUser($id)
+    {
+        if ($id != null) {
+            UserModel::where('id', '=', $id)->delete();
+        }
+    }
 
+    public function getAllUsers()
+    {
+        $users = UserModel::all();
+        return $users;
+    }
 
-
-
-
+    
     /**
      * Display a listing of the resource.
      *

@@ -52,4 +52,10 @@ Route::group(['middleware' => ['jwt.verify']], function () {
     Route::get('checkToken', 'UserController@checkToken');
     Route::get('editarPerfil', 'UserController@editarPerfil');
     Route::get('cargarCarrito', 'CarritosController@getLastNotConfirmedCarrito');
+    Route::get('usuarios', 'UserController@getAllUsers');
+    Route::get('borrarUser/{user}', 'UserController@destroyUser');
+
+    Route::get('addEvento', 'IndexController@storeEvento');
+    Route::get('editarEvento', 'IndexController@editarEvento');
+    Route::get('borrarEvento/{evento}', 'IndexController@destroyEvento');
 });
