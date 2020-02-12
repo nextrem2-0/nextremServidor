@@ -61,12 +61,12 @@ class IndexController extends Controller
             'creador_id' =>  $request->creador_id,
         ]);
 
-        if (request()->imagen != null) {
+       /*  if (request()->imagen != null) {
             $eventImgName =  $evento->id . '_event.'. request()->imagen->getClientOriginalExtension();
             $request->imagen->storeAs('eventos', $eventImgName);
             $evento->imagen  = $eventImgName;
             $evento->save();
-        }
+        } */
     }
     public function editarEvento(Request $request)
     {
@@ -75,7 +75,7 @@ class IndexController extends Controller
         foreach ($request->except(['id', 'imagen']) as $key => $part) {
             EventosModel::where('id', '=', $id)->update(array($key => $part));
         }
-        $imagen =  $request->get('imagen');
+        /* $imagen =  $request->get('imagen');
         if ($imagen != null ||  $imagen != "") {
 
             $nombreAntiguoImg = EventosModel::where('id', $id)->value('imagen');
@@ -83,7 +83,7 @@ class IndexController extends Controller
             $eventImgName =  $request->id . '_event' . time() . '.' . request()->imagen->getClientOriginalExtension();
             $request->imagen->storeAs('eventos', $eventImgName);
             EventosModel::where('id', '=', $id)->update(array('imagen' => $eventImgName));
-        }
+        } */
         /* 
         $nombre =  $request->get('nombre');
         if ($nombre != null ||  $nombre != "") {
