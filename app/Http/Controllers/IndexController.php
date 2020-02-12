@@ -67,6 +67,11 @@ class IndexController extends Controller
     public function editarEvento(Request $request)
     {
         $id =  $request->get('id');
+
+        foreach ($request->except('id') as $key => $part) {
+            EventosModel::where('id', '=', $id)->update(array($key => $part));
+        }
+        /* 
         $nombre =  $request->get('nombre');
         if ($nombre != null ||  $nombre != "") {
             EventosModel::where('id', $id)->update(array('nombre' => $nombre));
@@ -102,7 +107,7 @@ class IndexController extends Controller
         $deporte_id =  $request->get('deporte_id');
         if ($deporte_id != null ||  $deporte_id != "") {
             EventosModel::where('id', $id)->update(array('deporte_id' => $deporte_id));
-        }
+        } */
     }
 
     public function destroyEvento($id)
@@ -117,6 +122,11 @@ class IndexController extends Controller
     {
         $eventos = EventosModel::whereRAW('plazas_totales - plazas_ocupadas !=0 ')->orderByRaw('plazas_totales - plazas_ocupadas ASC')->take(3)->get();
         return $eventos;
+    }
+
+    public function getEventosCreadosOfUser($id)
+    {
+        return  EventosModel::where('creador_id', '=', $id)->get();
     }
 
     public function getCategorias()

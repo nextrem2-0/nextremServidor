@@ -37,6 +37,8 @@ Route::get('eventosRecomendados', 'IndexController@getEventosMasOcupados');
 
 Route::get('user/{user}/eventos', 'CarritosController@getEventosOfUser');
 
+Route::get('user/{user}/eventosCreados', 'IndexController@getEventosCreadosOfUser');
+
 Route::post('register', 'UserController@register');
 
 Route::get('login', 'UserController@login');
@@ -56,6 +58,6 @@ Route::group(['middleware' => ['jwt.verify']], function () {
     Route::get('borrarUser/{user}', 'UserController@destroyUser');
 
     Route::get('addEvento', 'IndexController@storeEvento');
-    Route::get('editarEvento', 'IndexController@editarEvento');
+    Route::patch('editarEvento', 'IndexController@editarEvento');
     Route::get('borrarEvento/{evento}', 'IndexController@destroyEvento');
 });
