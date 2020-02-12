@@ -49,27 +49,40 @@ class IndexController extends Controller
 
     public function storeEvento(Request $request)
     {
-        $evento = new EventosModel;
+        $evento = EventosModel::create([
+            'nombre' => $request->nombre,
+            'resumen' =>  $request->resumen,
+            'plazas_totales' => $request->plazas_totales,
+            'plazas_ocupadas' =>  $request->plazas_ocupadas,
+            'precio' => $request->precio,
+            'dificultad' =>  $request->dificultad,
+            'material' => $request->material,
+            'deporte_id' =>  $request->deporte_id,
+            'creador_id' =>  $request->creador_id,
+        ]);
 
-        $evento->nombre = $request->nombre;
-        $evento->resumen = $request->resumen;
-        $evento->plazas_totales = $request->plazas_totales;
-        $evento->plazas_ocupadas = $request->plazas_ocupadas;
-        $evento->precio = $request->precio;
-        $evento->dificultad = $request->dificultad;
-        $evento->material = $request->material;
-        $evento->imagen = $request->imagen;
-        $evento->deporte_id = $request->deporte_id;
-        $evento->creador_id = $request->creador_id;
-
-        $evento->save();
+        if (request()->imagen != null) {
+            $eventImgName =  $evento->id . '_event.'. request()->imagen->getClientOriginalExtension();
+            $request->imagen->storeAs('eventos', $eventImgName);
+            $evento->imagen  = $eventImgName;
+            $evento->save();
+        }
     }
     public function editarEvento(Request $request)
     {
         $id =  $request->get('id');
 
-        foreach ($request->except('id') as $key => $part) {
+        foreach ($request->except(['id', 'imagen']) as $key => $part) {
             EventosModel::where('id', '=', $id)->update(array($key => $part));
+        }
+        $imagen =  $request->get('imagen');
+        if ($imagen != null ||  $imagen != "") {
+
+            $nombreAntiguoImg = EventosModel::where('id', $id)->value('imagen');
+            Storage::delete($nombreAntiguoImg);
+            $eventImgName =  $request->id . '_event' . time() . '.' . request()->imagen->getClientOriginalExtension();
+            $request->imagen->storeAs('eventos', $eventImgName);
+            EventosModel::where('id', '=', $id)->update(array('imagen' => $eventImgName));
         }
         /* 
         $nombre =  $request->get('nombre');

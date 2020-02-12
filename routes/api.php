@@ -57,7 +57,7 @@ Route::group(['middleware' => ['jwt.verify']], function () {
     Route::get('usuarios', 'UserController@getAllUsers');
     Route::get('borrarUser/{user}', 'UserController@destroyUser');
 
-    Route::get('addEvento', 'IndexController@storeEvento');
+    Route::post('addEvento', 'IndexController@storeEvento');
     Route::patch('editarEvento', 'IndexController@editarEvento');
     Route::get('borrarEvento/{evento}', 'IndexController@destroyEvento');
 });
